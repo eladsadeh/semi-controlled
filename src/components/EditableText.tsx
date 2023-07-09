@@ -71,17 +71,17 @@ export const EditableText = ({value = '', setValue}: Props) => {
   }
 
   function handelKeys(ev: React.KeyboardEvent<HTMLSpanElement>) {
-    console.log("Element KeyDown")
-    // if (/^Arrow/.test(ev.key)) {
-    //   // Move caret when using arrow keys
-    //   const sel = window.getSelection();
-    //   if (sel) caretLocation.current = sel.anchorOffset;
-    // } else if (ev.metaKey && ev.key === "z") {
-    //   // TODO: Undo/Redo functionality
-    //   // ev.preventDefault(); // Prevent browser undo/redo
-    //   if (ev.shiftKey) console.log("REDO")
-    //   else console.log("UNDO")
-    // }
+    // console.log("Element KeyDown")
+    if (/^Arrow/.test(ev.key)) {
+      // Move caret when using arrow keys
+      const sel = window.getSelection();
+      if (sel) caretLocation.current = sel.anchorOffset;
+    } else if (ev.metaKey && ev.key === "z") {
+      // TODO: Undo/Redo functionality
+      // ev.preventDefault(); // Prevent browser undo/redo
+      if (ev.shiftKey) console.log("REDO")
+      else console.log("UNDO")
+    }
   }
   
   return (
